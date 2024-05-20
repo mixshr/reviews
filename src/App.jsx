@@ -7,12 +7,20 @@ function App() {
     const {name, job, image, text} = people[index];
     const prevPerson = () => {
         setIndex((currentIndex) => {
-            return currentIndex + 1;
+            let newIndex =  currentIndex + 1;
+            if (newIndex > people.length - 1) {
+                return 0;
+            }
+            return newIndex;
         })
     }
     const nextPerson = () => {
         setIndex((currentIndex) => {
-            return currentIndex - 1;
+            let newIndex =  currentIndex + 1;
+            if (newIndex < people.length - 1) {
+                return 0;
+            }
+            return newIndex;
         })
     }
 
